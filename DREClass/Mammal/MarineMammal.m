@@ -129,7 +129,7 @@ classdef MarineMammal < handle
             end
 
 
-            if obj.directivityIndex < 1
+            if obj.directivityIndex < 0
                 bool = 0;
                 msg{end+1} = sprintf(['Invalid directivity index. ' ...
                     'Directivity index must be greater than 1dB'], rMaxMin, rMaxMax);
