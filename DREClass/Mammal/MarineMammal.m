@@ -26,6 +26,7 @@ classdef MarineMammal < handle
         % Default values 
         centroidFrequencyDefault = 100 * 1e3; % centroid frequency
         bandwidthDefault = 20 * 1e3 % Bandwidth in Hz 
+        durationDefault = 1 % 1 s
         sourceLevelDefault = 175;% source level dB re 1uPa @ 1m 
         rMaxDefault = 1500; % Maximum detection range according to literature 
         livingDepthDefault = 10; % Depth where the mammal is supposed to live 
@@ -66,13 +67,14 @@ classdef MarineMammal < handle
             else
                 sigName = obj.signalName;
             end
-            obj.signal = Signal(sigName, obj.centroidFrequency, obj.bandwidth, obj.sourceLevel, obj.sigmaSourceLevel, obj.directivityIndex);
+            obj.signal = Signal(sigName, obj.centroidFrequency, obj.bandwidth, obj.duration, obj.sourceLevel, obj.sigmaSourceLevel, obj.directivityIndex);
         end
 
         function setDefault(obj)
             obj.name = 'DefaultMammal';
             obj.centroidFrequency =  obj.centroidFrequencyDefault;
             obj.bandwidth = obj.bandwidthDefault;
+            obj.duration = obj.durationDefault;
             obj.sourceLevel = obj.sourceLevelDefault;
             obj.sigmaSourceLevel = obj.sigmaSourceLevelDefault;
             obj.rMax = obj.rMaxDefault; 
