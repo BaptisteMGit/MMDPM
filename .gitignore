@@ -1,0 +1,8 @@
+# List of untracked files to ignore
+**.txt
+**.env
+**.bty
+**.prt
+**.ray
+**.asv
+resources/
