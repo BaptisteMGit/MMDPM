@@ -39,7 +39,7 @@ function writeLogHeader(obj)
     for i=1:numel(obj.oceanEnvironment.depth)
         fprintf(fileID, '\t%4.1f   %5.1f   %6.1f   %2.1f   %7.1f\n', ...
             obj.oceanEnvironment.depth(i), obj.oceanEnvironment.temperatureC(i), ...
-            obj.oceanEnvironment.salinity(i), obj.oceanEnvironment.pH(i), obj.SoundCelerity(i));
+            obj.oceanEnvironment.salinity(i), obj.oceanEnvironment.pH(i), obj.ssp.c(i));
     end
 
     fprintf(fileID, '\n\tAmbient noise level: %3.2f dB\n', obj.noiseEnvironment.noiseLevel);

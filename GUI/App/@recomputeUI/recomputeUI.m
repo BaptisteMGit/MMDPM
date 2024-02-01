@@ -125,7 +125,7 @@ classdef recomputeUI < handle
         function editFieldChanged(app, hObject, eventData, type)
             switch type 
                 case 'NL'
-                    app.Simulation.noiseLevel = hObject.Value;
+                    app.Simulation.noiseEnvironment.noiseLevel = hObject.Value;
                 case 'DT'
                     app.Simulation.detector.detectionThreshold = hObject.Value;
             end
