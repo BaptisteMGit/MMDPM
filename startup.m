@@ -1,3 +1,3 @@
 if ~isdeployed
-    openProject('DRE_SeaMonitor.prj');
+    openProject('Projects.prj');
 end
