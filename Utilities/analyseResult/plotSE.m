@@ -25,6 +25,7 @@ ylabel('Depth [m]')
 
 yline(zTarget, '--k', 'Living depth', 'LineWidth', 1, 'LabelVerticalAlignment', 'bottom')
 yline([zTarget-deltaZ, zTarget+deltaZ], ':k', 'LineWidth', 1)
+
 drawnow
 
 end

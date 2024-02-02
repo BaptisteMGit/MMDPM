@@ -33,7 +33,7 @@ classdef editMarineMammalUI < handle
         Width = 450;
         Height = 400;
         % Number of components 
-        glNRow = 12;
+        glNRow = 14;
         glNCol = 5;
         
         % Labels visual properties 
@@ -146,7 +146,7 @@ classdef editMarineMammalUI < handle
                 'ValueChangedFcn', @app.specieChanged, 'LayoutPosition',  struct('nRow', 2, 'nCol', 4)})
 
             % Save settings 
-            addButton(app, {'Parent', app.GridLayout, 'Name', 'Save', 'ButtonPushedFcn', @app.saveSettings, 'LayoutPosition', struct('nRow', 12, 'nCol', [2, 4])})
+            addButton(app, {'Parent', app.GridLayout, 'Name', 'Save', 'ButtonPushedFcn', @app.saveSettings, 'LayoutPosition', struct('nRow', 14, 'nCol', [2, 4])})
 
             % Set editable properties 
             app.updateSpecieNameEditField()

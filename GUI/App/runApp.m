@@ -14,6 +14,8 @@ if isdeployed
         app = AppDRE(devQuickConfig);
 else
 %         app = AppDRE(TestCase1_ArtificialPorpoise);
-        app = AppDRE(TestCase1_RecordedPorpoise);
+%         app = AppDRE(TestCase1_RecordedPorpoise);
+        app = AppDRE(devQuickConfig);
+
 end
 
