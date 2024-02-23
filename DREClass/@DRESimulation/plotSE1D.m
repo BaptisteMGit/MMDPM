@@ -2,9 +2,9 @@ function plotSE1D(obj, nameProfile)
     cd(obj.rootOutputFiles)
     % SE
     varargin = {'filename',  sprintf('%s.shd', nameProfile), 'SL', obj.marineMammal.signal.sourceLevel};
-    [spl, ~, ~] = computeSPL(varargin{:});
+    [spl, zt, rt] = computeSPL(varargin{:});
 
-    varargin = {'SPL', spl, 'Depth', obj.zt, 'Range', obj.rt, ...
+    varargin = {'SPL', spl, 'Depth', zt, 'Range', rt, ...
         'NL', obj.noiseEnvironment.noiseLevel, 'DT', obj.detector.detectionThreshold, ...
         'zTarget', obj.marineMammal.livingDepth, 'deltaZ', obj.marineMammal.deltaLivingDepth};
     plotSE(varargin{:})
