@@ -6,7 +6,6 @@ function getBathyData(obj)
     % Query subset data from GEBCO global grid 
     if strcmp(obj.bathyEnvironment.source, 'GEBCO2021')
         bathyFile = extratBathybBoxFromGEBCOGlobal(obj.bBox, obj.rootSaveInput);
-        obj.bathyEnvironment.rootBathy = obj.rootSaveInput;
         obj.bathyEnvironment.bathyFile = bathyFile;
         obj.bathyEnvironment.bathyFileType = 'NETCDF';
         obj.bathyEnvironment.inputCRS = 'WGS84';
@@ -25,7 +24,8 @@ function getBathyData(obj)
         fCSV = fullfile(obj.rootSaveInput, fileCSV);
         bathyNETCDFtoCSV(fNETCDF, fCSV)
     end 
-
+    
+    obj.bathyEnvironment.rootBathy = obj.rootSaveInput;
     obj.dataBathy = loadBathy(obj.rootSaveInput, fileCSV, obj.bBoxENU, obj.mooring.mooringPos);
 
     linePts = repelem('.', 53 - numel(promptMsg));
