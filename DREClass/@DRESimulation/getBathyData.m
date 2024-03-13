@@ -1,7 +1,8 @@
 function getBathyData(obj)
     promptMsg = 'Loading bathymetry dataset';
     fprintf(promptMsg);
-    
+    fileCSV = 'Bathymetry.csv';
+
     % Query subset data from GEBCO global grid 
     if strcmp(obj.bathyEnvironment.source, 'GEBCO2021')
         bathyFile = extratBathybBoxFromGEBCOGlobal(obj.bBox, obj.rootSaveInput);
@@ -14,8 +15,6 @@ function getBathyData(obj)
 
     rootBathy = obj.bathyEnvironment.rootBathy;
     bathyFile = obj.bathyEnvironment.bathyFile;
-    
-    fileCSV = 'Bathymetry.csv';
     if strcmp(obj.bathyEnvironment.bathyFileType, 'CSV') % File is a csv
         % Copy to input folder 
         copyfile(fullfile(rootBathy, bathyFile), fullfile(obj.rootSaveInput, fileCSV))
@@ -28,6 +27,7 @@ function getBathyData(obj)
     end 
 
     obj.dataBathy = loadBathy(obj.rootSaveInput, fileCSV, obj.bBoxENU, obj.mooring.mooringPos);
+
     linePts = repelem('.', 53 - numel(promptMsg));
     fprintf(' %s DONE\n', linePts);
 end

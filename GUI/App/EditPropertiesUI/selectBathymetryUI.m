@@ -119,9 +119,9 @@ classdef selectBathymetryUI < handle
                                             'Select a file');
             if ~isnumeric(file) % Check if a file has been selected 
                 if indx == 1 % File is a csv
-                    app.Simulation.bathyEnvironment.bathyFileType = 'CSV';                
+                    app.Simulation.bathyEnvironment.bathyFileType = 'NETCDF';                
                 elseif indx == 2 % File is a netcdf
-                    app.Simulation.bathyEnvironment.bathyFileType = 'NETCDF';
+                    app.Simulation.bathyEnvironment.bathyFileType = 'CSV';
                 end 
      
                 app.Simulation.bathyEnvironment.rootBathy = path;
