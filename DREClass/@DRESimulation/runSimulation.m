@@ -16,8 +16,10 @@ function flag = runSimulation(obj)
 
     obj.getBathyData();
     
-    d.Message = 'Checking python configuration...';
-    obj.setPythonEnv()
+    if ~obj.load_cmems_FromFile
+        d.Message = 'Checking python configuration...';
+        obj.setPythonEnv()
+    end
 
     d.Message = 'Downloading T, S, pH data from CMEMS...';
     obj.setOceanEnvironment()     

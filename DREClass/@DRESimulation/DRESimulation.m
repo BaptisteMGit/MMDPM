@@ -60,6 +60,10 @@
         % std for head mouvement used when considering narrowband model 
         sigmaH = 15; % [°]
 
+        % Flag to control whether to load data from file or from online
+        % servers 
+        load_cmems_FromFile = 1;
+
     end
     
     properties (Hidden)
